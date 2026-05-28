@@ -7,6 +7,7 @@ Static HTML/CSS website for The Aesculapius Foundation.
 - `index.html` — Home page
 - `mission.html` — Mission page
 - `programs.html` — Programs page
+- `validation.html` — Diagnostic Validation Program page and intake form
 - `support.html` — Support page
 - `contact.html` — Contact page
 - `404.html` — fallback page
