@@ -10,9 +10,31 @@
 
   const form = document.getElementById('validation-intake');
   if (!form) return;
+
+  const validateRequiredCheckboxGroups = () => {
+    let valid = true;
+    const groups = form.querySelectorAll('[data-required-group]');
+    groups.forEach((group) => {
+      const checkboxes = group.querySelectorAll('input[type="checkbox"]');
+      const error = group.querySelector('.form-error');
+      const hasChecked = Array.from(checkboxes).some((checkbox) => checkbox.checked);
+      checkboxes.forEach((checkbox) => checkbox.setCustomValidity(hasChecked ? '' : 'Please select at least one option.'));
+      if (error) error.hidden = hasChecked;
+      if (!hasChecked) valid = false;
+    });
+    return valid;
+  };
+
+  form.addEventListener('change', (event) => {
+    if (event.target && event.target.matches('input[type="checkbox"]')) {
+      validateRequiredCheckboxGroups();
+    }
+  });
+
   form.addEventListener('submit', (event) => {
     event.preventDefault();
-    if (!form.reportValidity()) return;
+    const groupsValid = validateRequiredCheckboxGroups();
+    if (!groupsValid || !form.reportValidity()) return;
 
     const data = new FormData(form);
     const lines = [];
