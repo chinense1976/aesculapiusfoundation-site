@@ -7,7 +7,8 @@ Static HTML/CSS website for The Aesculapius Foundation.
 - `index.html` — Home page
 - `mission.html` — Mission page
 - `programs.html` — Programs page
-- `validation.html` — Diagnostic Validation Program page and intake form
+- `validation.html` — Diagnostic Validation Program page and Google Form link
+- `grants.html` — Access & Equity Equipment Grant Program page
 - `support.html` — Support page
 - `contact.html` — Contact page
 - `404.html` — fallback page
