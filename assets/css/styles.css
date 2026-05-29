@@ -97,14 +97,16 @@ p { margin: 0 0 1rem; }
 .cta .button.secondary { border-color: rgba(255,255,255,.55); color: white; background: transparent; }
 .cta .button.secondary:hover { background: white; color: var(--charcoal); }
 
-.intake-form { margin-top: 1.5rem; }
+.intake-form, .application-form { margin-top: 1.5rem; }
 .intake-form fieldset { border: 1px solid var(--line); border-radius: var(--radius); padding: 1.25rem; margin: 0 0 1.25rem; }
 .intake-form legend { padding: 0 .35rem; }
 .form-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
-.intake-form label, .field-label { display: grid; gap: .35rem; font-weight: 750; color: var(--charcoal); }
+.intake-form label, .application-form label, .field-label { display: grid; gap: .35rem; font-weight: 750; color: var(--charcoal); }
+.application-form label { margin: 0 0 1rem; }
 .intake-form label span, .field-label em { color: var(--muted); font-size: .85rem; font-style: normal; font-weight: 650; }
-.intake-form input, .intake-form select, .intake-form textarea { width: 100%; border: 1px solid var(--line); border-radius: 12px; padding: .78rem .85rem; background: #fff; color: var(--ink); font: inherit; }
-.intake-form input:focus, .intake-form select:focus, .intake-form textarea:focus { outline: 3px solid rgba(181,138,58,.25); border-color: var(--gold); }
+.intake-form input, .intake-form select, .intake-form textarea, .application-form input, .application-form select, .application-form textarea { width: 100%; border: 1px solid var(--line); border-radius: 12px; padding: .78rem .85rem; background: #fff; color: var(--ink); font: inherit; }
+.intake-form input:focus, .intake-form select:focus, .intake-form textarea:focus, .application-form input:focus, .application-form select:focus, .application-form textarea:focus { outline: 3px solid rgba(181,138,58,.25); border-color: var(--gold); }
+.application-form input[type="checkbox"] { width: auto; margin-right: .45rem; }
 .full { grid-column: 1 / -1; }
 .checkbox, .checkbox-group .checkbox { display: flex !important; align-items: flex-start; gap: .55rem; font-weight: 600; margin: .45rem 0; }
 .checkbox input { width: auto; margin-top: .25rem; }
