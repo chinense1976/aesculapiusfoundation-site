@@ -86,7 +86,7 @@ p { margin: 0 0 1rem; }
 .button.secondary { border-color: var(--gold); color: var(--charcoal); background: rgba(255,255,255,.72); }
 .button.secondary:hover { background: var(--gold); color: white; }
 
-.page-hero { background: linear-gradient(135deg, rgba(26,45,64,.98), rgba(36,59,83,.86)), url('../images/social-card.jpg') center/cover; color: white; padding: clamp(4rem, 7vw, 6.5rem) 0; text-align: center; }
+.page-hero { background: linear-gradient(135deg, rgba(26,45,64,.98), rgba(36,59,83,.86)); color: white; padding: clamp(4rem, 7vw, 6.5rem) 0; text-align: center; }
 .page-hero h1 { color: white; }
 .page-hero p { max-width: 760px; margin: 0 auto; color: rgba(255,255,255,.88); font-size: 1.15rem; }
 .rule { width: 72px; height: 4px; background: var(--gold); border-radius: 999px; margin: 1.2rem auto 0; }
