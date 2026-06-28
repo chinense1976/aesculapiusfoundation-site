@@ -206,10 +206,47 @@
     margin-top: 1.5rem;
   }
 
+  /* ── WVC Conference Banner ── */
+  .wvc-conf-banner {
+    background: #1a2a3a;
+    padding: clamp(1.25rem, 3vw, 2rem) 1.25rem;
+    text-align: center;
+  }
+
+  .wvc-conf-banner-inner {
+    max-width: 760px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .75rem;
+  }
+
+  .wvc-conf-banner img.wvc-logo {
+    max-width: clamp(260px, 55vw, 460px);
+    height: auto;
+  }
+
+  .wvc-conf-banner .wvc-conf-meta {
+    color: #c8d8e8;
+    font-size: clamp(.85rem, 2vw, 1rem);
+    letter-spacing: .04em;
+  }
+
+  .wvc-conf-banner .wvc-conf-meta strong {
+    color: #fff;
+  }
+
   /* ── Mobile — already stacked by flex-direction:column above ── */
   @media (min-width: 560px) {
     .route-btn {
       padding: 1.4rem 1.6rem;
+    }
+
+    .wvc-conf-banner-inner {
+      flex-direction: row;
+      justify-content: center;
+      gap: 2rem;
     }
   }
 </style>
@@ -247,13 +284,22 @@
 
 <main id="main">
 
+  <!-- ── WVC Nashville Conference Banner ── -->
+  <div class="wvc-conf-banner">
+    <div class="wvc-conf-banner-inner">
+      <a href="https://www.viticusgroup.org/wvc-nashville" target="_blank" rel="noopener noreferrer">
+        <img
+          class="wvc-logo"
+          src="https://www.viticusgroup.org/hs-fs/hubfs/2026%20WVC%20Annual%20Conference%20Logos/WVC2026_nashville_color_reduced.png?width=630&height=148&name=WVC2026_nashville_color_reduced.png"
+          alt="WVC Nashville 2026 — Western Veterinary Conference"
+        />
+      </a>
+      <p class="wvc-conf-meta"><strong>Aug. 15–18, 2026</strong>&ensp;·&ensp;Music City Center&ensp;·&ensp;Nashville, TN</p>
+    </div>
+  </div>
+
   <!-- ── Hero ── -->
   <section class="wvc-hero" aria-labelledby="wvc-title">
-    <img
-      class="seal"
-      src="assets/images/taf-logo-transparent.png"
-      alt="The Aesculapius Foundation seal"
-    />
     <h1 id="wvc-title">Welcome from WVC Nashville 2026</h1>
     <p class="subhead">Tell us who you are and we'll point you in the right direction.</p>
   </section>
@@ -368,15 +414,6 @@
         &nbsp;|&nbsp;
         <a href="tel:+13364629988">336-462-9988</a>
       </p>
-      <div class="candid-wrap">
-        <a href="https://candid.org" target="_blank" rel="noopener noreferrer">
-          <img
-            alt="Candid Gold Transparency 2026 seal"
-            src="assets/images/candid-seal-gold-2026.png"
-            style="width:100px;height:auto;"
-          />
-        </a>
-      </div>
     </div>
   </section>
 
@@ -415,7 +452,16 @@
         <p class="small">Educational resources only. The Foundation does not provide medical or veterinary diagnosis, treatment, or individualized clinical advice.</p>
       </div>
     </div>
-    <div class="footer-note">© 2026 The Aesculapius Foundation. All rights reserved.</div>
+    <div class="footer-note" style="display:flex;align-items:center;justify-content:center;gap:1.5rem;flex-wrap:wrap;">
+      <span>© 2026 The Aesculapius Foundation. All rights reserved.</span>
+      <a href="https://candid.org" target="_blank" rel="noopener noreferrer">
+        <img
+          alt="Candid Gold Transparency 2026 seal"
+          src="assets/images/candid-seal-gold-2026.png"
+          style="width:72px;height:auto;vertical-align:middle;"
+        />
+      </a>
+    </div>
   </div>
 </footer>
 
