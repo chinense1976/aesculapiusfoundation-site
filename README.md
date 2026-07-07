@@ -15,6 +15,7 @@ Static HTML/CSS website for The Aesculapius Foundation.
 - `assets/css/styles.css` — global styling
 - `assets/images/` — logo, favicon, and site images
 - `CNAME` — custom domain target for GitHub Pages
+- `redirects.json` — QR code redirect map (see `docs/qr-redirects.md`)
 
 ## GitHub Pages deployment
 
