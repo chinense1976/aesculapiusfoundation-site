@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<script>
+(function () {
+  var m = location.pathname.match(/\/qr\/([a-zA-Z0-9_-]+)\/?$/);
+  if (!m) return;
+  var slug = m[1];
+  document.documentElement.classList.add('qr-redirecting');
+  fetch('/redirects.json', { cache: 'no-store' })
+    .then(function (res) { return res.json(); })
+    .then(function (map) {
+      var dest = map[slug];
+      if (!dest) { document.documentElement.classList.remove('qr-redirecting'); return; }
+      var url = new URL(dest, location.origin);
+      if (!url.searchParams.has('utm_source')) {
+        url.searchParams.set('utm_source', 'qr');
+        url.searchParams.set('utm_medium', 'print');
+        url.searchParams.set('utm_campaign', slug);
+      }
+      location.replace(url.toString());
+    })
+    .catch(function () { document.documentElement.classList.remove('qr-redirecting'); });
+})();
+</script>
+<style>
+  #qr-loading { display: none; }
+  html.qr-redirecting body > *:not(#qr-loading) { display: none !important; }
+  html.qr-redirecting #qr-loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    color: #191714;
+    background: #F7F3EA;
+  }
+</style>
+<title>Page Not Found | The Aesculapius Foundation</title>
+<meta content="The requested page could not be found on The Aesculapius Foundation website." name="description"/>
+
+
+<meta content="Page Not Found | The Aesculapius Foundation" property="og:title"/>
+<meta content="The requested page could not be found on The Aesculapius Foundation website." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="https://www.aesculapiusfoundation.org/assets/images/aesculapius-foundation-logo-color.png" property="og:image"/>
+<link href="assets/css/styles.css" rel="stylesheet"/>
+<meta content="index, follow" name="robots"/><link href="https://www.aesculapiusfoundation.org/404.html" rel="canonical"/><meta content="https://www.aesculapiusfoundation.org/404.html" property="og:url"/><meta content="The Aesculapius Foundation" property="og:site_name"/><meta content="The Aesculapius Foundation logo and mark" property="og:image:alt"/><meta content="summary_large_image" name="twitter:card"/><meta content="Page Not Found | The Aesculapius Foundation" name="twitter:title"/><meta content="The requested page could not be found on The Aesculapius Foundation website." name="twitter:description"/><meta content="https://www.aesculapiusfoundation.org/assets/images/aesculapius-foundation-logo-color.png" name="twitter:image"/><script id="schema-organization" type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "NGO",
+  "@id": "https://www.aesculapiusfoundation.org/#organization",
+  "name": "The Aesculapius Foundation",
+  "url": "https://www.aesculapiusfoundation.org/",
+  "logo": "https://www.aesculapiusfoundation.org/assets/images/aesculapius-foundation-logo-color.png",
+  "description": "A 501(c)(3) nonprofit organization dedicated to advancing healthcare education, whole-person health literacy, professional development, and community empowerment.",
+  "email": "contact@aesculapiusfoundation.org",
+  "areaServed": {
+    "@type": "Country",
+    "name": "United States"
+  },
+  "knowsAbout": [
+    "Healthcare education",
+    "Health literacy",
+    "Professional development",
+    "Community health education",
+    "Whole-person health"
+  ]
+}</script><script id="schema-website" type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://www.aesculapiusfoundation.org/#website",
+  "url": "https://www.aesculapiusfoundation.org/",
+  "name": "The Aesculapius Foundation",
+  "publisher": {
+    "@id": "https://www.aesculapiusfoundation.org/#organization"
+  }
+}</script><script id="schema-webpage" type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://www.aesculapiusfoundation.org/404.html#webpage",
+  "url": "https://www.aesculapiusfoundation.org/404.html",
+  "name": "Page Not Found | The Aesculapius Foundation",
+  "description": "The requested page could not be found on The Aesculapius Foundation website.",
+  "isPartOf": {
+    "@id": "https://www.aesculapiusfoundation.org/#website"
+  },
+  "about": {
+    "@id": "https://www.aesculapiusfoundation.org/#organization"
+  }
+}</script></head>
+<body>
+<div id="qr-loading" aria-live="polite">Redirecting&hellip;</div>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+<div class="nav-wrap">
+<a aria-label="The Aesculapius Foundation home" class="brand" href="index.html">
+<img alt="" height="42" src="assets/images/aesculapius-foundation-logo-color.png" width="42"/>
+<span>The Aesculapius Foundation</span>
+</a>
+<button aria-controls="primary-nav" aria-expanded="false" class="nav-toggle" type="button">Menu</button>
+<nav aria-label="Primary navigation" class="primary-nav" id="primary-nav"><a class="" href="index.html">Home</a><a class="" href="mission.html">Mission</a><div class="nav-dropdown"><a class="" href="programs.html">Programs</a><div class="dropdown-menu"><a href="programs.html">All Programs</a><a href="validation.html">Product Evaluation</a></div></div><a class="" href="resources.html">Resources</a><a class="" href="grants.html">Grants</a><a class="" href="advisory.html">Advisory Board</a><a class="" href="support.html">Support</a><a href="partner.html">Partner With Us</a><a class="" href="contact.html">Contact</a></nav>
+</div>
+</header>
+<main id="main">
+<section aria-labelledby="home-title" class="hero">
+<div class="container hero-grid">
+<div class="hero-logo-card">
+<img alt="The Aesculapius Foundation logo" src="assets/images/aesculapius-foundation-logo-color.png"/>
+</div>
+<div class="hero-copy">
+<div class="kicker">Healthcare education · health literacy · community empowerment</div>
+<h1 id="home-title">Page Not Found</h1>
+<p class="tagline">Supporting whole-person health education, professional development, and community-centered learning.</p>
+<p class="lede">The Aesculapius Foundation is a 501(c)(3) nonprofit organization dedicated to advancing healthcare education, whole-person health literacy, professional development, and community empowerment.</p>
+<div class="hero-actions">
+<a class="button primary" href="support.html">Support Our Mission</a>
+<a class="button secondary" href="programs.html">Explore Program Areas</a>
+</div>
+</div>
+</div>
+</section>
+<section aria-labelledby="mission-summary" class="section">
+<div class="container narrow">
+<h2 id="mission-summary">Healthcare education, whole-person health literacy, professional development, and community empowerment.</h2>
+<p>The Foundation’s mission is to provide accessible, high-quality educational resources and initiatives that support excellence in medical practice, promote evidence-informed approaches to health and wellness, improve health literacy, and empower healthcare professionals, students, caregivers, and communities with knowledge that supports better health outcomes.</p>
+<p>Named in honor of Asclepius, the ancient symbol of healing, the Foundation is committed to building a healthier world through lifelong learning, compassionate education, scientific integrity, and informed community engagement.</p>
+</div>
+</section>
+<section aria-labelledby="focus-title" class="section alt">
+<div class="container">
+<div class="kicker">Our Focus</div>
+<h2 id="focus-title">Education that supports better understanding and better care.</h2>
+<div class="card-grid" role="list">
+<article class="card" role="listitem">
+<img alt="Healthcare education workshop with students and a clinician instructor" src="assets/images/healthcare-education.jpg"/>
+<div class="card-body">
+<h3>Healthcare Education</h3>
+<p>Accessible educational resources for healthcare professionals, students, caregivers, and communities.</p>
+</div>
+</article>
+<article class="card" role="listitem">
+<img alt="Whole-person health literacy discussion in a community setting" src="assets/images/whole-person-health.jpg"/>
+<div class="card-body">
+<h3>Whole-Person Health Literacy</h3>
+<p>Evidence-informed education about the physical, emotional, mental, social, environmental, and lifestyle factors that influence health.</p>
+</div>
+</article>
+<article class="card" role="listitem">
+<img alt="Healthcare professionals attending a professional development training session" src="assets/images/professional-development.jpg"/>
+<div class="card-body">
+<h3>Professional Development</h3>
+<p>Lifelong learning, ethical practice, clinical excellence, leadership, and innovation across the health sciences.</p>
+</div>
+</article>
+<article class="card" role="listitem">
+<img alt="Community members attending a health literacy session" src="assets/images/community-empowerment.jpg"/>
+<div class="card-body">
+<h3>Community Empowerment</h3>
+<p>Initiatives that improve health literacy, expand access to reliable information, and help communities make better-informed decisions.</p>
+</div>
+</article>
+</div>
+</div>
+</section>
+<section aria-labelledby="experience-title" class="section">
+<div class="container two-col">
+<div>
+<div class="kicker">Built on experience</div>
+<h2 id="experience-title">A renewed mission with a history in healthcare education.</h2>
+<p>The Foundation has prior experience developing independent medical education and CME-related programming in collaboration with accredited providers, faculty experts, and healthcare-sector partners.</p>
+</div>
+<div class="panel">
+<h3>Prior work included</h3>
+<ul class="timeline-list">
+<li><strong>Needs assessment and educational planning</strong> Translating learning gaps into educational objectives and program designs.</li>
+<li><strong>Live and online programs</strong> Supporting lectures, workshops, webinar-based education, and enduring educational materials.</li>
+<li><strong>Program execution and evaluation</strong> Coordinating faculty, audiences, logistics, communications, and post-program evaluation.</li>
+</ul>
+</div>
+</div>
+</section>
+<section aria-labelledby="why-title" class="section alt">
+<div class="container narrow">
+<h2 id="why-title">Why It Matters</h2>
+<p>Better health outcomes begin with better knowledge. The Aesculapius Foundation exists to make healthcare education more accessible, practical, and useful — not only for professionals and students, but also for communities seeking clearer, more reliable health information.</p>
+<p>By supporting healthcare education, whole-person health literacy, professional development, and community empowerment, the Foundation aims to encourage a more informed, compassionate, prevention-oriented approach to health.</p>
+</div>
+</section>
+<section class="section compact">
+<div class="container">
+<div class="cta">
+<div>
+<h2>Support accessible healthcare education.</h2>
+<p>The Foundation is building educational resources and initiatives that help healthcare professionals, students, caregivers, and communities access reliable knowledge and strengthen health literacy.</p>
+</div>
+<div class="actions">
+<a class="button primary" href="support.html">Support Our Mission</a>
+<a class="button secondary" href="contact.html">Contact Us</a>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer class="site-footer">
+<div class="container">
+<div class="footer-grid">
+<div>
+<div class="footer-brand">
+<img alt="" height="54" src="assets/images/aesculapius-foundation-logo-color-white-bg.jpg" width="54"/>
+<strong>The Aesculapius Foundation</strong>
+</div>
+<p>The Aesculapius Foundation is a 501(c)(3) nonprofit organization dedicated to advancing healthcare education, whole-person health literacy, professional development, and community empowerment.</p>
+</div>
+<div>
+<strong>Explore</strong>
+<div aria-label="Footer navigation" class="footer-links">
+<a href="mission.html">Mission</a>
+<a href="programs.html">Programs</a>
+<a href="support.html">Support</a>
+<a href="partner.html">Partner With Us</a>
+<a href="contact.html">Contact</a>
+</div>
+</div>
+<div>
+<strong>Contact</strong>
+<p><a href="mailto:SoniaTouby@aesculapiusfoundation.org">SoniaTouby@aesculapiusfoundation.org</a></p>
+<p class="small">Educational resources only. The Foundation does not provide medical diagnosis, treatment, or individualized medical advice.</p>
+</div>
+</div>
+<div class="footer-note">© 2026 The Aesculapius Foundation. All rights reserved.</div>
+</div>
+</footer>
+<script src="assets/js.js"></script>
+</body>
+</html>
+
