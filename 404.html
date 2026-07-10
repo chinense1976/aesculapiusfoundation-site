@@ -6,7 +6,7 @@
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <script>
 (function () {
-  var m = location.pathname.match(/\/qr\/([a-zA-Z0-9_-]+)\/?$/);
+  var m = location.pathname.match(/^(?:\/qr)?\/([a-zA-Z0-9_-]+)\/?$/);
   if (!m) return;
   var slug = m[1];
   document.documentElement.classList.add('qr-redirecting');
