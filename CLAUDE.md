@@ -14,6 +14,8 @@ Before answering any status question or starting new work, query Notion:
 
 This tracker is authoritative for phase/task status. Local files in this folder and notes in the Obsidian second-brain vault (`C:\Dev\ClinixLynx-Second-Brain`) can lag behind it — always confirm against Notion before reporting progress or assuming something is/isn't done. This was gotten wrong once already (2026-07-08) by trusting stale vault notes instead of Notion.
 
+**Mandatory: update the Notion tracker before ending any session that changes WordPress state.** Gap found 2026-07-09 — a full day of WordPress work (content model, first published article, template fixes) left Phase 6 showing a single stale "Not started" row because nothing required writing progress back to Notion. Before ending a session that touches the staging site (new/edited content types, published articles, template changes, plugin changes, bug fixes), either update the relevant existing row's Status/Notes or add a new row under the right Phase describing what changed and its current state. Don't rely on the row already existing — Phase 6 in particular only had one generic planning row with no per-article or per-feature tracking; add rows as needed rather than leaving work untracked.
+
 ---
 
 ## What This Project Is
@@ -46,16 +48,16 @@ A Claude Code session working in the *wrong* repo (`C:\clinixlynx-connect`) used
 - **Gravity Forms via TechSoup: dead end**, confirmed 2026-07-08 — no TechSoup grant/discount exists for it. If a forms plugin is needed later, it must be sourced by direct purchase or a different plugin. Current intake forms (Evaluation Program, Grant Request) stay on Google Forms/Apps Script in the interim.
 - **CMS content types built with Custom Post Type UI** (free WordPress.org plugin) — no paid/TechSoup plugin license needed for this.
 
-## Build Status Snapshot (as of 2026-07-08 — verify against Notion before trusting this)
+## Build Status Snapshot (as of 2026-07-09 — verify against Notion before trusting this)
 
 | Phase | Status |
 |---|---|
 | 1 — Hosting & dependencies | Done |
 | 2 — Staging setup | Done |
 | 3 — Site rebuild (12 pages) | Done |
-| 4 — CMS content model (8 post types, 6 taxonomies) | Done |
+| 4 — CMS content model (8 post types, 6 taxonomies) | Done (1 open low-priority bug: article byline renders empty, worked around) |
 | 5 — Forms & donations | Resolved (no online payment needed) |
-| 6 — Resource library | Not started |
+| 6 — Resource library | In progress — article CPT live; Screwworm article (post 48) drafted but still unpublished/untagged; homepage "From the Resource Library" widget + synced "Related Reading" pattern built and live on all 12 core pages, currently showing latest articles (no topic filtering yet) |
 | 7 — DNS launch / redirect map | Not started |
 | 8 — Governance (donor language) | Not started |
 
@@ -80,3 +82,13 @@ The active block theme **snapshots the classic menu into static blocks on first 
 - Keep TAF messaging nonprofit, educational, independent, donor-ready, non-commercial. No ClinixLynx sales language.
 - Preserve nonprofit/commercial entity separation at all times.
 - Do not treat this folder's local files as the source of truth for what's live — the GoDaddy staging site and the Notion tracker are authoritative; this folder holds inputs and history.
+
+## Standing Rule — Real Photos Only (No AI-Generated Images)
+
+Every photo used on the live site (and the WordPress rebuild) must be a real photograph — sourced from a free-license library (Pexels, Unsplash, CDC/USDA public domain, etc.) or an actual TAF program photo. Verify authenticity before using an image: real photos carry camera EXIF (resolution/copyright/software tags); AI-generated images typically have none. Do not use images with watermarks removed — that's a copyright risk, not a valid free-use source, regardless of what any prior README/batch claims.
+
+**Exception:** AI is fine for generated graphics that are clearly diagrams — charts, graphs, infographics. Not photos of people, animals, places, or events.
+
+**Why:** 2026-07-13 — the live site had multiple AI-generated stock-style photos in place of real ones (program cards, 404 page); replaced with verified real Pexels photos. Michael's stated reason: doesn't want the foundation's own site to look "fake" or read as AI-generated to visitors or to Google.
+
+A batch of ~45 AI-sourced/questionable-provenance images plus 2 README files documenting them exist unused in `assets/images/` (numbered `01_...jpg`–`46_...jpg`, plus 2 UUID-named PNGs) — left in place by Michael's choice, not deleted. Do not use these for any live page.
