@@ -131,6 +131,23 @@ p { margin: 0 0 1rem; }
 .form-note, .form-confirmation { margin-top: 1rem; }
 .form-confirmation { color: var(--blue-dark); font-weight: 750; }
 
+.vetbill-frame-wrap {
+  margin-top: 1.5rem;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: 0 12px 34px rgba(30,24,18,.06);
+}
+.vetbill-frame {
+  display: block;
+  width: 100%;
+  min-height: 2200px;
+  border: 0;
+  background: #fff;
+}
+.vetbill-fallback { margin-top: 1rem; }
+
 .site-footer { background: #181512; color: rgba(255,255,255,.84); padding: 3rem 0; }
 .footer-grid { display: grid; grid-template-columns: 1.4fr .8fr .8fr; gap: 2rem; align-items: start; }
 .footer-brand { display: flex; gap: .85rem; align-items: center; margin-bottom: 1rem; }
@@ -175,4 +192,5 @@ p { margin: 0 0 1rem; }
   .card img { height: 220px; }
   .hero-actions, .actions { flex-direction: column; align-items: stretch; }
   .button { width: 100%; }
+  .vetbill-frame { min-height: 2800px; }
 }
