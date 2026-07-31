@@ -1,5 +1,7 @@
 # SEO and Copy-Edit Pass — v2
 
+> ⚠️ **HISTORICAL — the GitHub Pages site described below is retired.** Production DNS cut over to WordPress on 2026-07-30. This document no longer applies to the live site.
+
 This package adds a final technical SEO pass to the live GitHub Pages site.
 
 Changes included:

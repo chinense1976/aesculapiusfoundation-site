@@ -1,5 +1,7 @@
 # QR Redirect System
 
+> ⚠️ **RETIRED MECHANISM — needs reimplementation on WordPress.** This system relied on GitHub Pages serving `404.html` for unmatched `/qr/<slug>` paths. Production DNS cut over to WordPress on 2026-07-30, so GitHub Pages no longer serves `aesculapiusfoundation.org` and this redirect trick is no longer live. If printed QR codes pointing to `/qr/<slug>` are still in circulation, this needs an equivalent built on WordPress (e.g. the Redirection plugin, already installed per `CLAUDE.md`) — check the Notion tracker and `github.com/aesculapius-foundation/taf-wp` before assuming this still works.
+
 Replaces Flowcode. QR codes point to permanent URLs like `https://www.aesculapiusfoundation.org/qr/conference`. The destination behind that URL can be changed at any time without reprinting the QR code.
 
 ## How it works

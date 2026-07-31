@@ -1,5 +1,7 @@
 # The Aesculapius Foundation Website
 
+> ⚠️ **RETIRED — DO NOT USE.** This describes the old static HTML/GitHub Pages site (`chinense1976/aesculapiusfoundation-site`). Production DNS for `aesculapiusfoundation.org` cut over to WordPress on 2026-07-30; GitHub Pages is no longer live. The canonical repo for current work is `github.com/aesculapius-foundation/taf-wp`. See `CLAUDE.md` in this folder for current project instructions.
+
 Static HTML/CSS website for The Aesculapius Foundation.
 
 ## Files

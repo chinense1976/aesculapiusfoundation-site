@@ -1,5 +1,7 @@
 # TAF Website (WordPress Rebuild) — Project Instructions
 
+> ⚠️ **THIS GITHUB REPOSITORY IS RETIRED.** This local folder's `origin` remote is `github.com/chinense1976/aesculapiusfoundation-site` — the old static GitHub Pages site. That site is no longer live (production DNS cut over to WordPress on 2026-07-30; see below). **Do not use this GitHub repo as a deployment target, do not push expecting it to affect the live site, and do not treat its GitHub Pages workflow docs (`AGENTS.md`, `README.md`) as current.** The canonical, actively maintained repository for this project is **`github.com/aesculapius-foundation/taf-wp`** (local clone: `C:\Users\Michael Touby\GitHub\taf-wp`). This local folder (`C:\aesculapius-foundation-site`) still holds useful historical inputs (old page content, migration scripts) but is not where live site changes originate.
+
 **Entity:** The Aesculapius Foundation (TAF) — 501(c)(3) public charity, EIN 20-0530212
 **This folder:** Canonical local home for the WordPress rebuild of aesculapiusfoundation.org
 **Not this repo:** ClinixLynx Connect (`C:\clinixlynx-connect`) is a separate commercial codebase for a different entity (CLXX Animal Health LLC). Keep TAF nonprofit work and ClinixLynx commercial work in separate sessions/repos — do not blend them.
@@ -10,7 +12,7 @@
 
 Before answering any status question or starting new work, query Notion:
 
-**Database:** "TAF WordPress CMS Migration Tracker" (under 🏛️ Aesculapius Foundation HQ)
+**Database:** "TAF WordPress Site — Build & Ops Tracker" (under 🏛️ Aesculapius Foundation HQ; renamed 2026-07-30 from "TAF WordPress CMS Migration Tracker" after production cutover)
 
 This tracker is authoritative for phase/task status. Local files in this folder and notes in the Obsidian second-brain vault (`C:\Dev\ClinixLynx-Second-Brain`) can lag behind it — always confirm against Notion before reporting progress or assuming something is/isn't done. This was gotten wrong once already (2026-07-08) by trusting stale vault notes instead of Notion.
 
@@ -27,18 +29,20 @@ Rebuilding aesculapiusfoundation.org from a static GitHub Pages site into a Word
 A Claude Code session working in the *wrong* repo (`C:\clinixlynx-connect`) used Chrome browser automation to explore Michael's live GoDaddy account, went through a "Managed WordPress" setup flow, and that flow repointed `aesculapiusfoundation.org` DNS away from GitHub Pages to a new, empty "Coming Soon" placeholder WordPress install (`1215462.us16.myftpupload.com` — not the real staging site `1217804...`). The live production site was down until DNS was manually restored the same day. Michael never approved this and never wants a live site taken down as a side effect of other work.
 
 **Hard rule for this project (also enforced globally, see user CLAUDE.md):**
-- Never touch DNS, nameservers, or domain settings for `aesculapiusfoundation.org` — via browser, API, or otherwise — without stating the exact change and getting Michael's explicit go-ahead for that specific change, first.
+- Never touch DNS, nameservers, or domain settings for `aesculapiusfoundation.org` — via browser, API, or otherwise — without stating the exact change and getting Michael's explicit go-ahead for that specific change, first. This rule stays in force post-cutover — the live site is now the WordPress build, so any DNS/registrar touch is production-affecting.
 - Never run GoDaddy's WordPress setup/launch wizards against this account without confirming first whether a staging site already exists (check this file + Notion tracker before creating anything new).
-- Cutover from the old static site to the new WordPress build (Phase 7) happens as one explicit, approved action — only after the new site is fully verified ready, redirect map is done, and DNS inventory is complete. It is never a byproduct of exploration.
 - TAF WordPress/DNS work only happens from this repo (`C:\aesculapius-foundation-site`). If a session is running elsewhere, stop and flag it before taking any live action.
 
-## Current Hosting (decided 2026-07-01)
+**UPDATE 2026-07-30 — Cutover happened.** Production DNS now points to the GoDaddy/WordPress build; `aesculapiusfoundation.org` resolves to `160.153.0.241` (confirmed via public DNS lookup), not GitHub Pages. The old static site is no longer what visitors see. However, cutover happened while three Phase 7 prep tasks were still "Not started" in the tracker — **redirect map** (old static URLs → new WordPress URLs), **DNS record inventory** (MX/SPF/DKIM/DMARC/Autodiscover preservation), and one punch-list item. These were not verified complete by this session. Before treating launch as fully clean: confirm old URLs 301 correctly (not 404) and confirm inbound mail still works (SPF/DKIM/MX untouched).
+
+## Current Hosting (decided 2026-07-01; cutover completed 2026-07-30)
 
 - **Host:** GoDaddy Managed WordPress Deluxe
-- **Staging site:** `1217804.us16.myftpupload.com`
+- **Live production site:** `aesculapiusfoundation.org` — now serves the WordPress build (was `1217804.us16.myftpupload.com` staging)
 - **SSH/SFTP:** `1217804.us16.ssh.myftpupload.com`
 - phpMyAdmin available; North America data center
-- **Production DNS still points to GitHub Pages** — the live site is untouched until an explicit cutover decision
+- **Production DNS now points to GoDaddy** — confirmed 2026-07-30 via public DNS lookup (resolves to `160.153.0.241`, not GitHub Pages' `185.199.x.x`). Old static GitHub Pages site is no longer live.
+- Open from Phase 7 prep that predates this cutover, not yet verified: redirect map (old URLs → new), DNS record inventory (MX/SPF/DKIM/DMARC preservation) — see tracker.
 - WP Engine: applied for nonprofit hosting, **rejected** — confirmed no nonprofit discount exists (verified independently against WP Engine's own site and TechSoup's catalog)
 - Azure $2,000/yr nonprofit credit: retained for offsite backups only, not the primary host
 
@@ -48,7 +52,7 @@ A Claude Code session working in the *wrong* repo (`C:\clinixlynx-connect`) used
 - **Gravity Forms via TechSoup: dead end**, confirmed 2026-07-08 — no TechSoup grant/discount exists for it. If a forms plugin is needed later, it must be sourced by direct purchase or a different plugin. Current intake forms (Evaluation Program, Grant Request) stay on Google Forms/Apps Script in the interim.
 - **CMS content types built with Custom Post Type UI** (free WordPress.org plugin) — no paid/TechSoup plugin license needed for this.
 
-## Build Status Snapshot (as of 2026-07-09 — verify against Notion before trusting this)
+## Build Status Snapshot (as of 2026-07-30 — verify against Notion before trusting this)
 
 | Phase | Status |
 |---|---|
@@ -57,8 +61,8 @@ A Claude Code session working in the *wrong* repo (`C:\clinixlynx-connect`) used
 | 3 — Site rebuild (12 pages) | Done |
 | 4 — CMS content model (8 post types, 6 taxonomies) | Done (1 open low-priority bug: article byline renders empty, worked around) |
 | 5 — Forms & donations | Resolved (no online payment needed) |
-| 6 — Resource library | In progress — article CPT live; Screwworm article (post 48) drafted but still unpublished/untagged; homepage "From the Resource Library" widget + synced "Related Reading" pattern built and live on all 12 core pages, currently showing latest articles (no topic filtering yet) |
-| 7 — DNS launch / redirect map | Not started |
+| 6 — Resource library | In progress — article CPT live; "Written for" audience/format label snippet installed & active |
+| 7 — DNS launch / redirect map | **Cutover done 2026-07-30** — production DNS live on GoDaddy/WordPress. Redirect map and DNS record inventory (MX/SPF/DKIM) sub-tasks still Not started — not yet verified post-cutover |
 | 8 — Governance (donor language) | Not started |
 
 ## Known Gotcha

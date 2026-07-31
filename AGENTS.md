@@ -1,3 +1,5 @@
+> ⚠️ **RETIRED — DO NOT USE.** This file describes maintaining the old static HTML/GitHub Pages site (`chinense1976/aesculapiusfoundation-site`). That site is no longer live: production DNS for `aesculapiusfoundation.org` cut over to the WordPress build on 2026-07-30. Everything below is historical and inactive. For current project instructions, see `CLAUDE.md` in this folder. The canonical repo for live work is `github.com/aesculapius-foundation/taf-wp`.
+
 ## Imported Claude Cowork project instructions
 
 # Claude Project Instructions — Static Website Maintenance
